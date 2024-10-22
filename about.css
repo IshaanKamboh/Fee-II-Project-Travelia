@@ -1,0 +1,362 @@
+/* Hero Section */
+.hero {
+    margin-top: 76px; /* Header height + padding */
+    width: 100%;
+    height: calc(100vh - 76px);
+    overflow: hidden;
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-right {
+        gap: 0.5rem;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* About Section Styles */
+.about-section {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 32px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #007bff;
+}
+
+.about-content {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555555;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 16px;
+    }
+
+    .about-title {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    .about-content {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 40px 12px;
+    }
+
+    .about-title {
+        font-size: 28px;
+    }
+
+    .about-content {
+        font-size: 15px;
+    }
+}
+
+/* Facts Section Styles */
+.facts-section {
+    padding: 80px 20px;
+}
+
+.facts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.facts-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 50px;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* Fact Card Styles */
+.fact-card {
+    background: white;
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+}
+
+.fact-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 16px;
+}
+
+.fact-description {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.fact-date {
+    font-size: 14px;
+    color: #888888;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .facts-section {
+        padding: 60px 16px;
+    }
+
+    .facts-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .fact-number {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .facts-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Animation for counter */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.counter {
+    animation: countUp 1s ease-out forwards;
+    display: inline-block;
+}
+
+
+.timeline-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.timeline-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.year-select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.timeline-scroll-container {
+    position: relative;
+    padding: 0 50px;  /* Added padding for scroll buttons */
+}
+
+.timeline-scroll {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    gap: 1.5rem;
+    padding: 0.5rem;
+    scroll-snap-type: x mandatory; /* Added for better scroll behavior */
+    -webkit-overflow-scrolling: touch;
+}
+
+.timeline-item {
+    flex: 0 0 300px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    scroll-snap-align: start; /* Added for better scroll behavior */
+}
+
+.timeline-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.timeline-content {
+    padding: 1rem;
+}
+
+.timeline-date {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.timeline-description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+    background: #f0f0f0;
+}
+
+.scroll-button:active {
+    background: #e0e0e0;
+}
+
+.scroll-left {
+    left: 0;
+}
+
+.scroll-right {
+    right: 0;
+}
+
+.scroll-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+.scroll-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        flex: 0 0 280px;
+    }
+    
+    .timeline-title {
+        font-size: 1.5rem;
+    }
+
+    .timeline-scroll-container {
+        padding: 0 40px;
+    }
+}
