@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JetSet - Your Journey Begins Here</title>
+    <link rel="stylesheet" href="flights1.css">
+    
+    <script src="flights1.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <div class="stars"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star" style="top: 30%; animation-delay: 2s;"></div>
+            <div class="shooting-star" style="top: 60%; animation-delay: 4s;"></div>
+        </div>
+
+        <header>
+            <img src="logo[1].svg" alt="JetSet Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">My Flights</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </nav>
+           
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </header>
+
+        <section class="hero-section">
+            <h1><centre>Book Your Flight</centre></h1>
+            <div class="hero-content">
+                <form class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="from">From</label>
+                            <input type="text" id="from" name="from" placeholder="Departure city">
+                        </div>
+                        <div class="form-group">
+                            <label for="to">To</label>
+                            <input type="text" id="to" name="to" placeholder="Arrival city">
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Departure</label>
+                            <input type="date" id="date" name="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="return">Return</label>
+                            <input type="date" id="return" name="return">
+                        </div>
+                    </div>
+                    <a href="searchflights.html">
+                        <button class="action-btn" type="button">Search Flights</button>
+                      </a>
+                </form>
+            </div>
+        </section>
+
+        <section class="explore-places">
+            <h2>Explore New Places</h2>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <img src="agra.jpeg" alt="Agra" class="destination-image">
+                    <div class="destination-name">Agra</div>
+                </div>
+                <div class="destination-card">
+                    <img src="kolkata.png" alt="Kolkata" class="destination-image">
+                    <div class="destination-name">Kolkata</div>
+                </div>
+                <div class="destination-card">
+                    <img src="mumbai.jpg" alt="Mumbai" class="destination-image">
+                    <div class="destination-name">Mumbai</div>
+                </div>
+                <div class="destination-card">
+                    <img src="chennai.jpeg" alt="Chennai" class="destination-image">
+                    <div class="destination-name">Chennai</div>
+                </div>
+            </div>
+        </section>
+
+        <h1>Start Planning Your Next Trip</h1>
+        <section class="features">
+            <div class="feature">
+                <h3>Experience Tranquility</h3>
+                <p>Serenity Haven offers a tranquil escape, featuring comfortable seating, calming ambiance, and attentive service.</p>
+            </div>
+            <div class="feature">
+                <h3>Elevate Your Experience</h3>
+                <p>Designed for discerning travelers, this exclusive lounge offers premium amenities, assistance, and private workspaces.</p>
+            </div>
+            <div class="feature">
+                <h3>A Welcoming Space</h3>
+                <p>Creating a family-friendly atmosphere, The Family Zone is the perfect haven for parents and children.</p>
+            </div>
+            <div class="feature">
+                <h3>A Culinary Delight</h3>
+                <p>Immerse yourself in a world of flavors, offering international cuisines, gourmet dishes, and carefully curated beverages.</p>
+            </div>
+        </section>
+
+        <div class="animated-section">
+            <div class="moving-sky"></div>
+            <div class="plane-container">
+                <div class="plane"></div>
+            </div>
+            <div class="welcome-text">
+                Welcome<br>to JetSetFly
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Booking Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect with Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 JetSetFly. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>
