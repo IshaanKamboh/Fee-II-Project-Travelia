@@ -67,42 +67,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const timelineData = [
   {
-      image: "/api/placeholder/400/300",
+      image: "assets/images/1.jpeg",
       date: "January 2020",
       description: "Travelia opens its doors in Mumbai, offering personalized travel experiences to adventure seekers."
   },
   {
-      image: "/api/placeholder/400/300",
+      image: "assets/images/2.jpeg",
       date: "March 2020",
       description: "Launched our first digital booking platform, connecting travelers with local experiences."
   },
   {
-      image: "/api/placeholder/400/300",
+      image: "assets/images/3.jpeg",
       date: "August 2021",
       description: "Expanded services to include luxury hotel partnerships across Southeast Asia."
   },
   {
-      image: "/api/placeholder/400/300",
+      image: "assets/images/4.jpeg",
       date: "October 2021",
       description: "Introduced our signature 'Cultural Immersion' tour packages."
   },
   {
-      image: "/api/placeholder/400/300",
+      image: "assets/images/5.jpeg",
       date: "February 2022",
       description: "Reached milestone of serving 10,000+ happy travelers."
   },
   {
-      image: "/api/placeholder/400/300",
+      image: "assets/images/6.jpeg",
       date: "June 2022",
       description: "Launched innovative flight booking system with price prediction."
   },
   {
-      image: "/api/placeholder/400/300",
+      image: "assets/images/7.jpeg",
       date: "December 2022",
       description: "Opened new offices in Delhi and Bangalore to serve growing customer base."
   },
   {
-      image: "/api/placeholder/400/300",
+      image: "assets/images/8.jpeg",
       date: "March 2023",
       description: "Introduced eco-friendly travel initiatives and sustainable tourism packages."
   }
