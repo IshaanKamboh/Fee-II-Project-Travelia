@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Listings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .hotel-card {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 16px;
+            display: flex;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-container {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .hotel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .hotel-info {
+            flex-grow: 1;
+        }
+
+        .hotel-name {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .hotel-type {
+            color: #6b6b6b;
+            margin-bottom: 8px;
+        }
+
+        .rating {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .excellent {
+            background-color: #1a8f3c;
+        }
+
+        .good {
+            background-color: #71b100;
+        }
+
+        .rating-text {
+            color: #4a4a4a;
+        }
+
+        .features {
+            margin: 12px 0;
+            color: #4a4a4a;
+        }
+
+        .location {
+            color: #6b6b6b;
+            margin-bottom: 12px;
+        }
+
+        .price-section {
+            text-align: right;
+            min-width: 200px;
+            padding-left: 20px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .price-from {
+            font-size: 14px;
+            color: #6b6b6b;
+        }
+
+        .sites-info {
+            margin: 12px 0;
+            color: #4a4a4a;
+        }
+
+        .btn-see-prices {
+            background: #0071c2;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .btn-see-prices:hover {
+            background: #005999;
+        }
+
+        .favorite-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #ccc;
+        }
+
+        .favorite-btn.active {
+            color: #e41e31;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <h1>Explore Our Top Hotel Listings</h1>
+    <div class="hotel-card">
+        <div class="image-container">
+            <img src="images/gradnd_hotel.jpg" alt="Grand Mercure Bengaluru at Gopalan Mall" class="hotel-image">
+        </div>
+        <div class="hotel-info">
+            <h2 class="hotel-name">Grand Mercure Bengaluru at Gopalan Mall</h2>
+            <div class="hotel-type">Hotel</div>
+            <div>
+                <span class="rating excellent">8.7</span>
+                <span class="rating-text">Excellent (13164 ratings)</span>
+            </div>
+            <div class="features">Fitness Center and Sauna, Rooftop Cocktails with a View</div>
+            <div class="location">Bengaluru</div>
+        </div>
+        <div class="price-section">
+            <div class="price-from">From</div>
+            <div class="price">₹7,803</div>
+            <div class="sites-info">See prices from 9 sites</div>
+            <button class="btn-see-prices">See prices →</button>
+        </div>
+        <button class="favorite-btn">♥</button>
+    </div>
+
+    <div class="hotel-card">
+        <div class="image-container">
+            <img src="images/Zostel.jpg" alt="Zostel Plus Panchgani" class="hotel-image">
+        </div>
+        <div class="hotel-info">
+            <h2 class="hotel-name">Zostel Plus Panchgani</h2>
+            <div class="hotel-type">Hostel</div>
+            <div>
+                <span class="rating excellent">9.1</span>
+                <span class="rating-text">Excellent (3523 ratings)</span>
+            </div>
+            <div class="features">Mountain Views, Community Kitchen, Adventure Activities</div>
+            <div class="location">Panchgani</div>
+        </div>
+        <div class="price-section">
+            <div class="price-from">From</div>
+            <div class="price">₹3,874</div>
+            <div class="sites-info">See prices from 3 sites</div>
+            <button class="btn-see-prices">See prices →</button>
+        </div>
+        <button class="favorite-btn">♥</button>
+    </div>
+
+    <div class="hotel-card">
+        <div class="image-container">
+            <img src="images/holiday_express.jpg" alt="Holiday Inn Express Chennai OMR Thoraipakkam" class="hotel-image">
+        </div>
+        <div class="hotel-info">
+            <h2 class="hotel-name">Holiday Inn Express Chennai OMR Thoraipakkam</h2>
+            <div class="hotel-type">Hotel</div>
+            <div>
+                <span class="rating good">7.7</span>
+                <span class="rating-text">Good (5396 ratings)</span>
+            </div>
+            <div class="features">Close to UNESCO Heritage Site, Fitness Center and Laundry Facilities</div>
+            <div class="location">Chennai</div>
+        </div>
+        <div class="price-section">
+            <div class="price-from">From</div>
+            <div class="price">₹3,191</div>
+            <div class="sites-info">See prices from 9 sites</div>
+            <button class="btn-see-prices">See prices →</button>
+        </div>
+        <button class="favorite-btn">♥</button>
+    </div>
+
+    <div class="hotel-card">
+        <div class="image-container">
+            <img src="images/Hotel_star place.avif" alt="" class="hotel-image">
+        </div>
+        <div class="hotel-info">
+            <h2 class="hotel-name">The Taj Palace Mumbai</h2>
+            <div class="hotel-type">Hotel</div>
+            <div>
+                <span class="rating excellent">9.3</span>
+                <span class="rating-text">Excellent (8756 ratings)</span>
+            </div>
+            <div class="features">Luxury Spa, Sea View Rooms, Fine Dining Restaurants</div>
+            <div class="location">Mumbai</div>
+        </div>
+        <div class="price-section">
+            <div class="price-from">From</div>
+            <div class="price">₹12,500</div>
+            <div class="sites-info">See prices from 12 sites</div>
+            <button class="btn-see-prices">See prices →</button>
+        </div>
+        <button class="favorite-btn">♥</button>
+    </div>
+
+    <div class="hotel-card">
+        <div class="image-container">
+            <img src="images/shimla.jpg" alt="" class="">
+        </div>
+        <div class="hotel-info">
+            <h2 class="hotel-name">Wildflower Resort Shimla</h2>
+            <div class="hotel-type">Resort</div>
+            <div>
+                <span class="rating excellent">8.9</span>
+                <span class="rating-text">Excellent (2341 ratings)</span>
+            </div>
+            <div class="features">Mountain Views, Indoor Pool, Adventure Sports</div>
+            <div class="location">Shimla</div>
+        </div>
+        <div class="price-section">
+            <div class="price-from">From</div>
+            <div class="price">₹6,299</div>
+            <div class="sites-info">See prices from 7 sites</div>
+            <button class="btn-see-prices">See prices →</button>
+        </div>
+        <button class="favorite-btn">♥</button>
+    </div>
+    v<div class="hotel-card">
+        <div class="image-container">
+            <img src="images/Hotel_ Mahadev.avif" alt="Zostel Plus Panchgani" class="hotel-image">
+        </div>
+        <div class="hotel-info">
+            <h2 class="hotel-name">Hotel Mahadev villa</h2>
+            <div class="hotel-type">Hostel</div>
+            <div>
+                <span class="rating excellent">9.3</span>
+                <span class="rating-text">Excellent (3503 ratings)</span>
+            </div>
+            <div class="features"> Community Kitchen, Adventure Activities</div>
+            <div class="location">Panchgani</div>
+        </div>
+        <div class="price-section">
+            <div class="price-from">From</div>
+            <div class="price">₹3,874</div>
+            <div class="sites-info">See prices from 3 sites</div>
+            <button class="btn-see-prices">See prices →</button>
+        </div>
+        <button class="favorite-btn">♥</button>
+    </div><div class="hotel-card">
+        <div class="image-container">
+            <img src="images/Zostel.jpg" alt="Zostel Plus Panchgani" class="hotel-image">
+        </div>
+        <div class="hotel-info">
+            <h2 class="hotel-name">Hotel Star Palace</h2>
+            <div class="hotel-type">Hostel</div>
+            <div>
+                <span class="rating excellent">9.1</span>
+                <span class="rating-text">Excellent (3523 ratings)</span>
+            </div>
+            <div class="features">Mountain Views, Community Kitchen, Adventure Activities</div>
+            <div class="location">Panchgani</div>
+        </div>
+        <div class="price-section">
+            <div class="price-from">From</div>
+            <div class="price">₹3,874</div>
+            <div class="sites-info">See prices from 3 sites</div>
+            <button class="btn-see-prices">See prices →</button>
+        </div>
+        <button class="favorite-btn">♥</button>
+    </div><div class="hotel-card">
+        <div class="image-container">
+            <img src="images/Ramada Plaza by Wydham Chandigarh.webp" alt="Zostel Plus Panchgani" class="hotel-image">
+        </div>
+        <div class="hotel-info">
+            <h2 class="hotel-name">Ramada Plaza by Wydham Chandigarh</h2>
+            <div class="hotel-type">Hostel</div>
+            <div>
+                <span class="rating excellent">9.1</span>
+                <span class="rating-text">Excellent (3523 ratings)</span>
+            </div>
+            <div class="features">Mountain Views, Community Kitchen, Adventure Activities</div>
+            <div class="location">Panchgani</div>
+        </div>
+        <div class="price-section">
+            <div class="price-from">From</div>
+            <div class="price">₹3,874</div>
+            <div class="sites-info">See prices from 3 sites</div>
+            <button class="btn-see-prices">See prices →</button>
+        </div>
+        <button class="favorite-btn">♥</button>
+    </div><div class="hotel-card">
+        <div class="image-container">
+            <img src="images/Hotel Golden Orchid.webp" alt="Zostel Plus Panchgani" class="hotel-image">
+        </div>
+        <div class="hotel-info">
+            <h2 class="hotel-name">Zostel Plus Panchgani</h2>
+            <div class="hotel-type">Hostel</div>
+            <div>
+                <span class="rating excellent">9.1</span>
+                <span class="rating-text">Excellent (3523 ratings)</span>
+            </div>
+            <div class="features">Mountain Views, Community Kitchen, Adventure Activities</div>
+            <div class="location">Panchgani</div>
+        </div>
+        <div class="price-section">
+            <div class="price-from">From</div>
+            <div class="price">₹3,874</div>
+            <div class="sites-info">See prices from 3 sites</div>
+            <button class="btn-see-prices">See prices →</button>
+        </div>
+        <button class="favorite-btn">♥</button>
+    </div><div class="hotel-card">
+        <div class="image-container">
+            <img src="images/hyatt.webp" alt="Zostel Plus Panchgani" class="hotel-image">
+        </div>
+        <div class="hotel-info">
+            <h2 class="hotel-name">Zostel Plus Panchgani</h2>
+            <div class="hotel-type">Hostel</div>
+            <div>
+                <span class="rating excellent">9.1</span>
+                <span class="rating-text">Excellent (3523 ratings)</span>
+            </div>
+            <div class="features">Mountain Views, Community Kitchen, Adventure Activities</div>
+            <div class="location">Panchgani</div>
+        </div>
+        <div class="price-section">
+            <div class="price-from">From</div>
+            <div class="price">₹3,874</div>
+            <div class="sites-info">See prices from 3 sites</div>
+            <button class="btn-see-prices">See prices →</button>
+        </div>
+        <button class="favorite-btn">♥</button>
+    </div>
+    <div class="hotel-card">
+        <div class="image-container">
+            <img src="images/valentines Retreat.avif" alt="" class="hotel-image">
+        </div>
+        <div class="hotel-info">
+            <h2 class="hotel-name">valentines Retreat</h2>
+            <div class="hotel-type">Hostel</div>
+            <div>
+                <span class="rating excellent">9.1</span>
+                <span class="rating-text">Excellent (3523 ratings)</span>
+            </div>
+            <div class="features">Mountain Views, Community Kitchen, Adventure Activities</div>
+            <div class="location">Panchgani</div>
+        </div>
+        <div class="price-section">
+            <div class="price-from">From</div>
+            <div class="price">₹3,874</div>
+            <div class="sites-info">See prices from 3 sites</div>
+            <button class="btn-see-prices">See prices →</button>
+        </div>
+        <button class="favorite-btn">♥</button>
+    </div>
+</body>
+</html>

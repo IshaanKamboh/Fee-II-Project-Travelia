@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Footer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .footer {
+            background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+            color: #fff;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700, #ff6b6b, #4ecdc4);
+            animation: borderAnimation 3s infinite linear;
+        }
+
+        @keyframes borderAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .footer-section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer-section h3 {
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #ffd700;
+            transition: width 0.3s ease;
+        }
+
+        .footer-section:hover h3::after {
+            width: 100px;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .footer-links a::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffd700;
+            padding-left: 20px;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: #ffd700;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #ffd700;
+            transform: translateY(-5px);
+        }
+
+        .newsletter-form {
+            position: relative;
+            margin-top: 1.5rem;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            background: #333;
+            color: #fff;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 8px 20px;
+            border: none;
+            border-radius: 20px;
+            background: #ffd700;
+            color: #000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #fff;
+        }
+
+        .bottom-bar {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Experience luxury and comfort at our prestigious hotel. We offer world-class amenities and exceptional service to make your stay memorable.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Our Rooms</a></li>
+                    <li><a href="#">Restaurant & Bar</a></li>
+                    <li><a href="#">Spa & Wellness</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>123 Luxury Avenue, Paradise City</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <p>+1 234 567 8900</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@luxuryhotel.com</p>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for special offers and updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <p>&copy; 2024 Luxury Hotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        // Animate footer sections on scroll
+        const footerSections = document.querySelectorAll('.footer-section');
+        
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = `fadeInUp 0.6s ${index * 0.2}s forwards`;
+                }
+            });
+        }, observerOptions);
+
+        footerSections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Newsletter form animation
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = newsletterForm.querySelector('input');
+            const button = newsletterForm.querySelector('button');
+            
+            button.textContent = 'Subscribed!';
+            button.style.background = '#4ecdc4';
+            input.value = '';
+            
+            setTimeout(() => {
+                button.textContent = 'Subscribe';
+                button.style.background = '#ffd700';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JetSetFly - Passenger Information</title>
+    <title>travelia flight</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
         :root {
-            --primary-color: #8B1E65;
-            --secondary-color: #4A0D36;
-            --background-color: #F5F7FA;
+            --primary-color: hsl(249, 95%, 63%);
+            --secondary-color: hsl(249, 95%, 63%);
+            --background-color: lavenderblush;
             --card-background: #FFFFFF;
             --text-color: #333333;
             --border-color: #E1E8F0;
@@ -315,9 +315,11 @@
 <body>
     <header>
         <div class="header-content">
-            <img src="/api/placeholder/150/40" alt="JetSetFly Logo" class="logo">
+            <img src="logo[1].svg" alt="JetSetFly Logo" class="logo">
             <nav>
-                <button class="btn btn-back">Cancel Booking</button>
+                <a href="flights1.html">
+                    <button class="btn btn-back">Cancel Booking</button>
+                </a>
             </nav>
         </div>
     </header>
@@ -454,7 +456,9 @@
             </div>
 
             <div class="button-group">
+                <a href="searchflights.html">
                 <button type="button" class="btn btn-back">Back</button>
+                </a>
                 <button type="submit" class="btn btn-submit">Continue to Seat Selection</button>
             </div>
         </form>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JetSetFly - Make a Booking</title>
+    <title>travelia flight</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -288,10 +288,10 @@
             <img src="logo[1].svg" alt="JetSetFly Logo" class="logo">
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">My Flights</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Feedback</a></li>
+                    <li><a href="flights1.html">Home</a></li>
+                    
+                    <li><a href="about.html">About</a></li>
+                    
                 </ul>
             </nav>
            
@@ -341,40 +341,41 @@
 
         // Create flight card
         function createFlightCard(flight) {
-            return `
-                <div class="flight-card">
-                    <div class="flight-details">
-                        <div class="departure">
-                            <div class="code">${flight.departure.code}</div>
-                            <div class="time">${flight.departure.time}</div>
-                            <div class="date">${flight.departure.date}</div>
-                        </div>
-                        <div class="flight-path">
-                            <i class="fas fa-plane">✈</i>
-                        </div>
-                        <div class="arrival">
-                            <div class="code">${flight.arrival.code}</div>
-                            <div class="time">${flight.arrival.time}</div>
-                            <div class="date">${flight.arrival.date}</div>
-                        </div>
-                    </div>
-                    <div class="class-options">
-                        ${flight.classes.map(cls => `
-                            <div class="class-option">
-                                <div class="name">${cls.name}</div>
-                                ${cls.price ? `
-                                    <div class="price">INR ${cls.price}</div>
-                                    <div class="seats">Seats Available: ${cls.seats}</div>
-                                    <button class="select-btn">Select</button>
-                                ` : `
-                                    <div class="not-available">Class Not Available</div>
-                                `}
-                            </div>
-                        `).join('')}
-                    </div>
+    return `
+        <div class="flight-card">
+            <div class="flight-details">
+                <div class="departure">
+                    <div class="code">${flight.departure.code}</div>
+                    <div class="time">${flight.departure.time}</div>
+                    <div class="date">${flight.departure.date}</div>
                 </div>
-            `;
-        }
+                <div class="flight-path">
+                    <i class="fas fa-plane">✈</i>
+                </div>
+                <div class="arrival">
+                    <div class="code">${flight.arrival.code}</div>
+                    <div class="time">${flight.arrival.time}</div>
+                    <div class="date">${flight.arrival.date}</div>
+                </div>
+            </div>
+            <div class="class-options">
+                ${flight.classes.map(cls => `
+                    <div class="class-option">
+                        <div class="name">${cls.name}</div>
+                        ${cls.price ? `
+                            <div class="price">INR ${cls.price}</div>
+                            <div class="seats">Seats Available: ${cls.seats}</div>
+                            <a href="passengerform.html?class=${cls.name}&price=${cls.price}&flight=${flight.departure.code}-${flight.arrival.code}" class="select-btn">Select</a>
+                        ` : `
+                            <div class="not-available">Class Not Available</div>
+                        `}
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
 
         // Populate flight list
         function populateFlightList() {

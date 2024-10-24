@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Stays in India</title>
+    <link rel="stylesheet" href="random.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <h1>Luxury Stays in India</h1>
+        <p class="subtitle">Discover unparalleled comfort and elegance</p>
+    </header>
+
+    <div class="search-form-container">
+        <form id="hotelSearchForm">
+            <div class="form-group">
+                <label for="destination">Destination</label>
+                <input type="text" id="destination" placeholder="Where are you going?">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+
+            <div class="form-group">
+                <label for="checkin">Check-in</label>
+                <input type="date" id="checkin">
+                <i class="far fa-calendar-alt"></i>
+            </div>
+
+            <div class="form-group">
+                <label for="checkout">Check-out</label>
+                <input type="date" id="checkout">
+                <i class="far fa-calendar-alt"></i>
+            </div>
+
+            <div class="occupancy">
+                <div class="form-group">
+                    <label for="adults">Adults</label>
+                    <select id="adults">
+                        <option value="" disabled selected>Select Adults</option>
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                    </select>
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <div class="form-group">
+                    <label for="children">Children</label>
+                    <select id="children">
+                        <option value="" disabled selected>Select Children</option>
+                        <option value="0">No Children</option>
+                        <option value="1">1 Child</option>
+                        <option value="2">2 Children</option>
+                        <option value="3">3 Children</option>
+                    </select>
+                    <i class="fas fa-child"></i>
+                </div>
+
+                <div class="form-group">
+                    <label for="rooms">Rooms</label>
+                    <select id="rooms">
+                        <option value="" disabled selected>Select Rooms</option>
+                        <option value="1">1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                    </select>
+                    <i class="fas fa-bed"></i>
+                </div>
+            </div>
+
+            <button type="submit">Search Hotels</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="subtitle">Best Choices</div>
+            <div class="title-container">
+                <h1 class="main-title">Popular Residencies</h1>
+                <div class="navigation">
+                    <button class="nav-button" id="prevBtn">←</button>
+                    <button class="nav-button" id="nextBtn">→</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-container">
+            <div class="properties-grid" id="propertiesGrid">
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3" 
+                         alt="Aliva Priva Jardin" 
+                         class="property-image">
+                    <div class="property-info">
+                        <div class="property-price">Rs.4,043</div>
+                        <h3 class="property-name">Aliva Priva Jardin</h3>
+                        <p class="property-address">Jakarta Garden City Street, Cakung, Pulo Gadung, Jakarta Timur, DKI Jakarta</p>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3" 
+                         alt="Asatti Garden City" 
+                         class="property-image">
+                    <div class="property-info">
+                        <div class="property-price">Rs.9080</div>
+                        <h3 class="property-name">Asatti Garden City</h3>
+                        <p class="property-address">Pahlawan Street XVII No.215, Cinangka, Sawangan, Depok, Jawa Barat</p>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3" 
+                         alt="Citralan Puri Serang" 
+                         class="property-image">
+                    <div class="property-info">
+                        <div class="property-price">Rs.3,853</div>
+                        <h3 class="property-name">Citralan Puri Serang</h3>
+                        <p class="property-address">Ruko Puri Indah Residence Block A7, Lingkar Street, Ciracas, Serang, Banten</p>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3" 
+                         alt="Aliva Priva Jardin" 
+                         class="property-image">
+                    <div class="property-info">
+                        <div class="property-price">Rs.4000</div>
+                        <h3 class="property-name">Aliva Priva Jardin</h3>
+                        <p class="property-address">Jakarta Garden City Street, Cakung, Pulo Gadung, Jakarta Timur, DKI Jakarta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Form validation and submission handler
+        function submitForm() {
+            // Get all form field values
+            const destination = document.getElementById('destination').value;
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+            const adults = document.getElementById('adults').value;
+            const children = document.getElementById('children').value;
+            const rooms = document.getElementById('rooms').value;
+
+            // Create an array of required fields and their labels
+            const requiredFields = [
+                { value: destination, name: 'Destination' },
+                { value: checkin, name: 'Check-in date' },
+                { value: checkout, name: 'Check-out date' },
+                { value: adults, name: 'Number of adults' },
+                { value: rooms, name: 'Number of rooms' }
+            ];
+
+            // Check for empty required fields
+            const emptyFields = requiredFields
+                .filter(field => !field.value)
+                .map(field => field.name);
+
+            // If there are empty fields, show alert
+            if (emptyFields.length > 0) {
+                const missingFields = emptyFields.join(', ');
+                alert(`Please fill in all required fields: ${missingFields}`);
+                return false;
+            }
+
+            // If all required fields are filled, redirect to practice.html
+            window.location.href = 'praticse.html';
+            return true;
+        }
+
+        // Add event listener to prevent default form submission
+        document.getElementById('hotelSearchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitForm();
+        });
+
+        // Carousel functionality
+        const propertiesGrid = document.getElementById('propertiesGrid');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        let scrollPosition = 0;
+        const cardWidth = document.querySelector('.property-card').offsetWidth + 24; // Including gap
+
+        prevBtn.addEventListener('click', () => {
+            scrollPosition = Math.max(scrollPosition - cardWidth, 0);
+            propertiesGrid.style.transform = `translateX(-${scrollPosition}px)`;
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const maxScroll = propertiesGrid.scrollWidth - propertiesGrid.clientWidth;
+            scrollPosition = Math.min(scrollPosition + cardWidth, maxScroll);
+            propertiesGrid.style.transform = `translateX(-${scrollPosition}px)`;
+        });
+
+        // Disable past dates in the date inputs
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkin').setAttribute('min', today);
+        document.getElementById('checkout').setAttribute('min', today);
+
+        // Update checkout min date when checkin is selected
+        document.getElementById('checkin').addEventListener('change', function() {
+            const checkinDate = this.value;
+            document.getElementById('checkout').setAttribute('min', checkinDate);
+            
+            // If checkout date is before new checkin date, reset it
+            const checkoutDate = document.getElementById('checkout').value;
+            if (checkoutDate && checkoutDate < checkinDate) {
+                document.getElementById('checkout').value = checkinDate;
+            }
+        });
+    </script>
+
+
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>Experience luxury and comfort at our prestigious hotel. We offer world-class amenities and exceptional service to make your stay memorable.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="#">Our Rooms</a></li>
+                <li><a href="#">Restaurant & Bar</a></li>
+                <li><a href="#">Spa & Wellness</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Gallery</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <div class="contact-info">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>123 Luxury Avenue, Paradise City</p>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-phone"></i>
+                <p>+1 234 567 8900</p>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i>
+                <p>info@luxuryhotel.com</p>
+            </div>
+        </div>
+
+        <!-- <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter for special offers and updates.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div> -->
+
+    <div class="bottom-bar">
+        <p>&copy; 2024 Luxury Hotel. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script>
+    // Animate footer sections on scroll
+    const footerSections = document.querySelectorAll('.footer-section');
+    
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = `fadeInUp 0.6s ${index * 0.2}s forwards`;
+            }
+        });
+    }, observerOptions);
+
+    footerSections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Newsletter form animation
+    const newsletterForm = document.querySelector('.newsletter-form');
+    
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = newsletterForm.querySelector('input');
+        const button = newsletterForm.querySelector('button');
+        
+        button.textContent = 'Subscribed!';
+        button.style.background = '#4ecdc4';
+        input.value = '';
+        
+        setTimeout(() => {
+            button.textContent = 'Subscribe';
+            button.style.background = '#ffd700';
+        }, 2000);
+    });
+</script>
+</body>
+</html>

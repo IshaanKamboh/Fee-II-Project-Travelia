@@ -1,0 +1,260 @@
+<!-- Save this as: index.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelia</title>
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div class="header">
+        <h1>Discover Amazing Destinations</h1>
+    </div>
+
+
+    <div class="page-links">
+      <a href="services.html" class="nav-btn">Services</a>
+      <a href="contact.html" class="nav-btn">Contact Us</a>
+    </div>
+    
+          
+         
+    <div class="container mt-5">
+      <div class="row input-boxes">
+          <!-- Where are you going? Dropdown -->
+          <div class="col-md-2 col-sm-12">
+              <select class="form-control" id="destinationSelect">
+                  <option disabled selected>Where are you going?</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Chennai">Chennai</option>
+                  <option value="Bangalore">Bangalore</option>
+                  <option value="Rishikesh">Rishikesh</option>
+                  <option value="Varanasi">Varanasi</option>
+                  <option value="Ayodhya">Ayodhya</option>
+              </select>
+          </div>
+          
+          <!-- Check-in Date -->
+          <div class="col-md-2 col-sm-12">
+              <label for="checkin-date">Check-in Date:</label>
+              <input type="date" id="checkin-date" class="form-control">
+          </div>
+          
+          <!-- Check-out Date -->
+          <div class="col-md-2 col-sm-12">
+              <label for="checkout-date">Check-out Date:</label>
+              <input type="date" id="checkout-date" class="form-control">
+          </div>
+          
+          <!-- Number of People -->
+          <div class="col-md-3 col-sm-12">
+              <label for="adults">Adults:</label>
+              <select class="form-control" id="adults">
+                  <option disabled selected>Select Adults</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+              </select>
+  
+              <label for="children" class="mt-2">Children:</label>
+              <select class="form-control" id="children">
+                  <option disabled selected>Select Children</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+              </select>
+          </div>
+          
+          <!-- Additional Choice -->
+          <div class="col-md-2 col-sm-12">
+              <label for="choice">Your Choice:</label>
+              <input type="text" id="choice" class="form-control" placeholder="Your Choice">
+          </div>
+          
+          <!-- Search Button -->
+          <div class="col-md-2 col-sm-12">
+              <button class="btn btn-search btn-block" id="searchBtn">Search</button>
+          </div>
+      </div>
+  </div>
+    
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search destinations...">
+    </div>
+
+    <div class="categories">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="Beaches">Beaches</button>
+        <button class="category-btn" data-category="Mountains">Mountains</button>
+        <button class="category-btn" data-category="Cities">Cities</button>
+        <button class="category-btn" data-category="Adventure">Adventure</button>
+        <button class="category-btn" data-category="Romantic">Romantic</button>
+        <button class="category-btn" data-category="temple">Temple</button>
+        <button class="category-btn" data-category="Wildlife">Wildlife</button>
+        <button class="category-btn" data-category="Desert">Desert</button>
+        <button class="category-btn" data-category="Islands">Islands</button>
+    </div>
+
+    <div class="view-toggle">
+        <button class="view-btn active" data-view="grid">
+            <i class="fas fa-th"></i> Grid
+        </button>
+    </div>
+
+    <div class="destinations-grid" id="destinationsGrid">
+        <!-- Destination cards will be inserted here by JavaScript -->
+    </div>
+
+    <button class="favorites-btn" id="favoritesBtn">
+        <i class="fas fa-heart"></i>
+        <span class="favorites-count">0</span>
+    </button>
+
+    <div class="favorites-panel" id="favoritesPanel">
+        <h2>My Favorites</h2>
+        <div class="favorites-list" id="favoritesList"></div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <!-- Modal content will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    
+
+  
+
+
+    <!-- Offers Section -->
+<div class="offers-section">
+  <h2>Exclusive Offers for You</h2>
+  <div class="offers-grid">
+      <!-- Offer 1 -->
+      <div class="offer-card">
+          <a href="https://paytm.com/download-paytm-app" target="_blank">
+              <img src="assets/images/paytm.jpg" alt="Paytm Offer">
+          </a>
+          <p>Pay with Paytm</p>
+      </div>
+      <!-- Offer 2 -->
+      <div class="offer-card">
+          <a href="https://pay.google.com/intl/en_in/about/" target="_blank">
+              <img src="assets/images/gpay.jpeg" alt="Google Pay Offer">
+          </a>
+          <p>Pay with Google Pay</p>
+      </div>
+      <!-- Offer 3 -->
+      <div class="offer-card">
+          <a href="https://www.amazon.in/amazonpay/home" target="_blank">
+              <img src="assets/images/apay.png" alt="Amazon Pay Offer">
+          </a>
+          <p>Pay with Amazon Pay</p>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Feedback Form -->
+<div class="feedback-form" id="feedbackForm">
+  <h2>Feedback Form</h2>
+  <form id="form">
+      <input type="text" placeholder="Name" required>
+      <input type="tel" placeholder="Mobile Number" required>
+      <input type="email" placeholder="Email ID" required>
+      <textarea placeholder="Your Experience" required></textarea>
+      <button type="submit">Submit</button>
+  </form>
+</div>
+<footer class="footer">
+    <div class="footer-section">
+      <h3>Travel Support</h3>
+      <ul>
+        <li><a href="#">COVID-19 Travel Guidelines</a></li>
+        <li><a href="#">Manage Your Bookings</a></li>
+        <li><a href="#">Contact Travel Support</a></li>
+        <li><a href="#">Safety Tips and Resources</a></li>
+      </ul>
+    </div>
+  
+    <div class="footer-section">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="#">Loyalty Programs</a></li>
+        <li><a href="#">Seasonal Travel Deals</a></li>
+        <li><a href="#">Travel Guides</a></li>
+        <li><a href="#">Business Travel Solutions</a></li>
+        <li><a href="#">Traveler Reviews</a></li>
+      </ul>
+    </div>
+  
+    <div class="footer-section">
+      <h3>Transportation</h3>
+      <ul>
+        <li><a href="#">Find Flights</a></li>
+        <li><a href="#">Car Rentals</a></li>
+        <li><a href="#">Restaurant Reservations</a></li>
+      </ul>
+    </div>
+  
+    <div class="footer-section">
+      <h3>Policies</h3>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Customer Grievance</a></li>
+        <li><a href="#">Modern Slavery Policy</a></li>
+        <li><a href="#">Human Rights Policy</a></li>
+      </ul>
+    </div>
+  
+    <div class="footer-section">
+      <h3>Partnerships</h3>
+      <ul>
+        <li><a href="#">Partner Portal</a></li>
+        <li><a href="#">Affiliate Programs</a></li>
+        <li><a href="#">List Your Property</a></li>
+        <li><a href="#">Become a Partner</a></li>
+      </ul>
+    </div>
+  
+    <div class="footer-section">
+      <h3>About Us</h3>
+      <ul>
+        <li><a href="Travelia/about.html">About Our Company</a></li>
+        <li><a href="#">How We Operate</a></li>
+        <li><a href="#">Sustainability Efforts</a></li>
+        <li><a href="#">Press Releases</a></li>
+        <li><a href="#">Careers with Us</a></li>
+        <li><a href="#">Investor Information</a></li>
+        <li><a href="#">Corporate Contacts</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+
+    <script src="destinations.js"></script>
+</body>
+</html>

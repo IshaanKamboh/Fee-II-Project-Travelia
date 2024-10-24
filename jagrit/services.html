@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Services - Travelia</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 30px 0;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+    }
+
+    p {
+      color: #ddd;
+    }
+
+    main {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 100px; /* Added margin to accommodate footer */
+    }
+
+    .service-category {
+      background-color: #fff;
+      border-radius: 10px;
+      width: 60%;
+      margin-bottom: 30px;
+      padding: 30px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .service-category:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
+
+    .service-description {
+      max-height: 100px;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      color: #555;
+    }
+
+    .read-more-btn {
+      display: inline-block;
+      margin-top: 15px;
+      color: #007bff;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+      color: #0056b3;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Services</h1>
+    <p>Welcome to Journey Junction. Explore the services we offer for an unforgettable travel experience.</p>
+  </header>
+
+  <main>
+    <section class="service-category">
+      <h2>Travel Planning</h2>
+      <div class="service-description">
+        <p>Our Travel Planning service offers expert advice on creating personalized travel itineraries. We provide:</p>
+        <ul>
+          <li><strong>Custom Itineraries:</strong> Tailored travel plans based on your interests and budget.</li>
+          <li><strong>Destination Insights:</strong> In-depth knowledge about popular and hidden destinations.</li>
+          <li><strong>Budget Management:</strong> Helping you make the most of your budget without sacrificing experiences.</li>
+          <li><strong>24/7 Support:</strong> Assistance throughout your trip.</li>
+        </ul>
+        <p>Plan your dream vacation with ease.</p>
+        <img src="assets/images/service1.jpg" alt="Travel Planning">
+      </div>
+      <p class="read-more-btn" onclick="toggleDescription(this)">Read More</p>
+    </section>
+
+    <section class="service-category">
+      <h2>Destination Recommendations</h2>
+      <div class="service-description">
+        <p>Discover amazing destinations tailored to your preferences...</p>
+        <ul>
+          <li>Personalized destination suggestions</li>
+          <li>Off-the-beaten-path recommendations</li>
+          <li>Top-rated spots to explore</li>
+        </ul>
+        <img src="assets/images/service2.jpg" alt="Destination Recommendations">
+      </div>
+      <p class="read-more-btn" onclick="toggleDescription(this)">Read More</p>
+    </section>
+
+    <!-- Additional services -->
+    <section class="service-category">
+      <h2>Accommodation Booking</h2>
+      <div class="service-description">
+        <p>Secure and convenient accommodation booking services...</p>
+        <ul>
+          <li>Wide range of hotels, resorts, and homestays</li>
+          <li>Exclusive deals and discounts</li>
+          <li>Hassle-free booking process</li>
+        </ul>
+        <img src="assets/images/service3.jpg" alt="Accommodation Booking">
+      </div>
+      <p class="read-more-btn" onclick="toggleDescription(this)">Read More</p>
+    </section>
+
+    <section class="service-category">
+      <h2>Adventure Packages</h2>
+      <div class="service-description">
+        <p>Thrilling adventure packages for adrenaline seekers...</p>
+        <ul>
+          <li>Guided adventure tours</li>
+          <li>Exciting activities like hiking, rafting, and paragliding</li>
+          <li>Safe and memorable experiences</li>
+        </ul>
+        <img src="assets/images/service4.jpg" alt="Adventure Packages">
+      </div>
+      <p class="read-more-btn" onclick="toggleDescription(this)">Read More</p>
+    </section>
+
+    <section class="service-category">
+      <h2>Customer Support</h2>
+      <div class="service-description">
+        <p>Dedicated customer support for all your travel-related inquiries...</p>
+        <ul>
+          <li>24/7 support services</li>
+          <li>Issue resolution assistance</li>
+          <li>Feedback and assistance channels</li>
+        </ul>
+        <img src="assets/images/customer_support.jpg" alt="Customer Support">
+      </div>
+      <p class="read-more-btn" onclick="toggleDescription(this)">Read More</p>
+    </section>
+    <!-- Additional service sections end -->
+
+  </main>
+
+  <footer>
+    <p>Contact us for more information: support@journeyjunction.com</p>
+  </footer>
+
+  <script>
+    function toggleDescription(btn) {
+      var description = btn.previousElementSibling;
+      if (description.classList.contains('service-description')) {
+        if (description.style.maxHeight) {
+          description.style.maxHeight = null;
+          btn.innerHTML = 'Read More';
+        } else {
+          description.style.maxHeight = description.scrollHeight + 'px';
+          btn.innerHTML = 'Read Less';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

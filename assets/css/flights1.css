@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #8B1E65;
-    --secondary-color: #4A0D36;
+    --primary-color: hsl(249, 95%, 63%);
+    --secondary-color: hsl(249, 95%, 63%);
     --glass-bg: rgba(255, 255, 255, 0.1);
     --glass-border: rgba(255, 255, 255, 0.2);
     --text-color: white;
@@ -156,7 +156,7 @@ body.light-mode .welcome-text {
     z-index: -1;
     background: 
         linear-gradient(217deg, rgba(var(--primary-color), .8), rgba(var(--secondary-color), 0) 70.71%),
-        linear-gradient(127deg, rgba(92,37,141,.8), rgba(92,37,141,0) 70.71%),
+        linear-gradient(127deg, hsl(249, 95%, 63%), rgba(92,37,141,0) 70.71%),
         linear-gradient(336deg, rgba(38,12,90,.8), rgba(38,12,90,0) 70.71%);
     overflow: hidden;
 }
@@ -210,7 +210,7 @@ header {
 
 .logo {
     height: 50px;
-    width:180px;
+    width: 120px;
     filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
 }
 
