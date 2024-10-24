@@ -772,6 +772,19 @@ body.nav-active { overflow: hidden; }
 .footer-bottom-link:is(:hover, :focus-visible) { text-decoration: underline;}
 
 
+.user-welcome {
+  color: var(--text-color);
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+.header-action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
 
 
 

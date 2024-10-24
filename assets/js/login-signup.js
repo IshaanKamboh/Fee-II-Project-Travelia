@@ -78,44 +78,32 @@ class UserStorage {
 // Initialize storage
 const userStorage = new UserStorage();
 
-// Session handler
+// Session handler with redirect
 class SessionManager {
     static startSession(email, name) {
         sessionStorage.setItem('currentUser', email);
         sessionStorage.setItem('userName', name);
         sessionStorage.setItem('loginTime', new Date().toISOString());
+        
+        // Redirect to home page after successful login
+        window.location.href = 'index.html';
     }
     
     static endSession() {
         sessionStorage.clear();
-        this.updateUIForLoggedOutUser();
+        // Redirect to login page after logout
+        window.location.href = 'login-signup.html';
     }
     
     static isLoggedIn() {
         return sessionStorage.getItem('currentUser') !== null;
     }
 
-    static updateUIForLoggedInUser() {
-        const userName = sessionStorage.getItem('userName');
-        container.innerHTML = `
-            <div class="welcome-container" style="text-align: center; padding: 20px;">
-                <h1 style="color: hsl(249, 95%, 63%);">Welcome to Travelia</h1>
-                <p>Welcome back, ${userName}!</p>
-                <button onclick="SessionManager.endSession()" style="
-                    background-color: hsl(249, 95%, 63%);
-                    color: white;
-                    padding: 10px 20px;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    margin-top: 20px;">
-                    Logout
-                </button>
-            </div>`;
-    }
-
-    static updateUIForLoggedOutUser() {
-        window.location.reload();
+    static getCurrentUser() {
+        return {
+            email: sessionStorage.getItem('currentUser'),
+            name: sessionStorage.getItem('userName')
+        };
     }
 }
 
@@ -155,17 +143,9 @@ signInForm.addEventListener('submit', (e) => {
     try {
         const user = userStorage.authenticateUser(email, password);
         SessionManager.startSession(email, user.name);
-        alert(`Welcome back, ${user.name}!`);
-        SessionManager.updateUIForLoggedInUser();
+        // Redirect happens automatically in startSession
     } catch (error) {
         alert(error.message);
-    }
-});
-
-// Check for existing session on page load
-window.addEventListener('load', () => {
-    if (SessionManager.isLoggedIn()) {
-        SessionManager.updateUIForLoggedInUser();
     }
 });
 
